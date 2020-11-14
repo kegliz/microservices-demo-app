@@ -14,7 +14,6 @@ istio:
   istioSelector: "ingressgateway"
 
 registry:
-  url: "https://index.docker.io"
   imageBaseUrl: "docker.io/zkegli"
   username: anonymous
   password: anonymous
