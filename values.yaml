@@ -19,4 +19,4 @@ registry:
   password: anonymous
 
 image:
-  tag: "038cebf3586b91d75a8c8b6d2c84b0e24dae636f"
+  tag: "will-be-replaced-by-pipeline-run"
