@@ -32,7 +32,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: {{ .Values.registry.url }}/emailservice:{{ .Values.image.tag }}
+        image: {{ .Values.registry.imageBaseUrl }}/emailservice:{{ .Values.image.tag }}
         ports:
         - containerPort: 8080
         env:
@@ -86,7 +86,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: {{ .Values.registry.url }}/checkoutservice:{{ .Values.image.tag }}
+          image: {{ .Values.registry.imageBaseUrl }}/checkoutservice:{{ .Values.image.tag }}
           ports:
           - containerPort: 5050
           readinessProbe:
@@ -155,7 +155,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: {{ .Values.registry.url }}/recommendationservice:{{ .Values.image.tag }}
+        image: {{ .Values.registry.imageBaseUrl }}/recommendationservice:{{ .Values.image.tag }}
         ports:
         - containerPort: 8080
         readinessProbe:
@@ -215,7 +215,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: {{ .Values.registry.url }}/frontend:{{ .Values.image.tag }}
+          image: {{ .Values.registry.imageBaseUrl }}/frontend:{{ .Values.image.tag }}
           ports:
           - containerPort: 8080
           readinessProbe:
@@ -307,7 +307,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: {{ .Values.registry.url }}/paymentservice:{{ .Values.image.tag }}
+        image: {{ .Values.registry.imageBaseUrl }}/paymentservice:{{ .Values.image.tag }}
         ports:
         - containerPort: 50051
         env:
@@ -356,7 +356,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: {{ .Values.registry.url }}/productcatalogservice:{{ .Values.image.tag }}
+        image: {{ .Values.registry.imageBaseUrl }}/productcatalogservice:{{ .Values.image.tag }}
         ports:
         - containerPort: 3550
         env:
@@ -413,7 +413,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: {{ .Values.registry.url }}/cartservice:{{ .Values.image.tag }}
+        image: {{ .Values.registry.imageBaseUrl }}/cartservice:{{ .Values.image.tag }}
         ports:
         - containerPort: 7070
         env:
@@ -473,7 +473,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: main
-        image: {{ .Values.registry.url }}/loadgenerator:{{ .Values.image.tag }}
+        image: {{ .Values.registry.imageBaseUrl }}/loadgenerator:{{ .Values.image.tag }}
         env:
         - name: FRONTEND_ADDR
           value: "{{ include "ms-demo.fullname" . }}-frontend:80"
@@ -503,7 +503,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: {{ .Values.registry.url }}/currencyservice:{{ .Values.image.tag }}
+        image: {{ .Values.registry.imageBaseUrl }}/currencyservice:{{ .Values.image.tag }}
         ports:
         - name: grpc
           containerPort: 7000
@@ -558,7 +558,7 @@ spec:
     spec:
       containers:
       - name: server
-        image: {{ .Values.registry.url }}/shippingservice:{{ .Values.image.tag }}
+        image: {{ .Values.registry.imageBaseUrl }}/shippingservice:{{ .Values.image.tag }}
         ports:
         - containerPort: 50051
         env:
@@ -669,7 +669,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: {{ .Values.registry.url }}/adservice:{{ .Values.image.tag }}
+        image: {{ .Values.registry.imageBaseUrl }}/adservice:{{ .Values.image.tag }}
         ports:
         - containerPort: 9555
         env:

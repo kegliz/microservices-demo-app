@@ -3,22 +3,21 @@
 # Declare variables to be passed into your templates.
 
 certificate:
-  issuer: "letsencrypt-prod-istio"
+  issuer: "letsencrypt-prod"
   kind: "ClusterIssuer"
-  commonName: "microservices-demo.your-domain.tld"
   namespace: "istio-system"
   dnsNames:
-  - "microservices-demo.your-domain.tld"
+  - "demo.kegnet.dev"
 
 istio:
   port: 443
   istioSelector: "ingressgateway"
 
 registry:
-  url: "your-registry.your-domain.tld"
+  url: "https://index.docker.io"
+  imageBaseUrl: "docker.io/zkegli"
   username: anonymous
   password: anonymous
 
 image:
   tag: "038cebf3586b91d75a8c8b6d2c84b0e24dae636f"
-
